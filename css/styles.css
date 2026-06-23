@@ -1,0 +1,160 @@
+:root {
+  --brand-color: #FF5500;
+  --brand-color-rgb: 255, 85, 0;
+}
+
+body {
+  background-color: #FFFDF9;
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+}
+
+/* Handwritten font utility */
+.font-cursive {
+  font-family: "Caveat", cursive;
+}
+
+/* Curved hand-drawn underline styling */
+.hand-drawn-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hand-drawn-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 105%;
+  height: 8px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'><path d='M3,7 C30,3 70,2 97,8' stroke='%23FF5500' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Dark high-tech dashboard styling for card headers */
+.project-card-header-bg {
+  background: linear-gradient(135deg, #181824 0%, #0a0a0f 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-header-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: radial-gradient(#ffffff 1px, transparent 0);
+  background-size: 8px 8px;
+}
+
+/* Dynamic classes relying on CSS variable */
+.text-brand-orange {
+  color: var(--brand-color);
+}
+
+.bg-brand-orange {
+  background-color: var(--brand-color);
+}
+
+.border-brand-orange {
+  border-color: var(--brand-color);
+}
+
+.bg-brand-orange-10 {
+  background-color: rgba(var(--brand-color-rgb), 0.08);
+}
+
+.bg-brand-orange-20 {
+  background-color: rgba(var(--brand-color-rgb), 0.18);
+}
+
+.focus-brand-orange:focus {
+  outline: none;
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 3px rgba(var(--brand-color-rgb), 0.15);
+}
+
+.outline-brand-orange {
+  border: 1px solid var(--brand-color);
+  color: var(--brand-color);
+}
+
+.outline-brand-orange:hover {
+  background-color: var(--brand-color);
+  color: #FFFDF9;
+}
+
+/* Card hover: left border bar appears, no scaling */
+.custom-card {
+  position: relative;
+  border-left: 0px solid transparent;
+  transition: border-left 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+}
+
+.custom-card:hover {
+  border-left: 4px solid var(--brand-color);
+}
+
+/* Scroll Reveal classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDF9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--brand-color-rgb), 0.8);
+}
+
+/* Timeline connectors */
+.timeline-dot {
+  background-color: var(--brand-color);
+  box-shadow: 0 0 0 4px rgba(var(--brand-color-rgb), 0.2);
+}
+
+.timeline-line {
+  background-color: rgba(var(--brand-color-rgb), 0.3);
+}
+
+/* Pulse effect */
+.pulse-orange {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(var(--brand-color-rgb), 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(var(--brand-color-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0px rgba(var(--brand-color-rgb), 0);
+  }
+}
