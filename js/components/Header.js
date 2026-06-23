@@ -9,7 +9,18 @@ const Header = ({ activeNavLink, scrollToSection, mobileMenuOpen, setMobileMenuO
           
           {/* Brand Logo */}
           <div className="cursor-pointer flex items-center" onClick={() => scrollToSection('hero')}>
-            <span className="font-cursive text-4xl font-bold tracking-tight text-brand-orange">BP.</span>
+            <img
+              src="./bp_logo.png"
+              alt="BP Logo"
+              style={{
+                height: '42px',
+                width: 'auto',
+                borderRadius: '10px',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.08)'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(255,85,0,0.25)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none'; }}
+            />
           </div>
 
           {/* Desktop Nav Links */}
